@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>list</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>id</th>
+    <th>title</th>
+<!-- <th>title(|| 안쓰는 경우)</th> || 를 쓰는 이유는 타임리프에서 경로상에서 버티컬 바를 통해서 내가 원하는 값을 얻기 위해 내가 원하는 ID   -->
+    <th>writer</th>
+    <th>date</th>
+    <th>hits</th>
+  </tr>
+  <tr th:each="board: ${boardList}">    <!-- ${boardList} 반복 대상 th:each => foreach 라고 생각하면 된다  board 변수로 하나씩 접근-->
+    <td th:text="${board.id}"></td>
+    <td><a th:href="@{|/board/${board.id}|}" th:text="${board.boardTitle}"></a></td>
+<!--    <td><a th:href="@{/board/${board.id}}" th:text="${board.boardTitle}"></a></td>-->
+    <td th:text="${board.boardWriter}"></td>
+    <td th:text="*{#temporals.format(board.boardCreatedTime, 'yyyy/MM/dd HH:mm:ss')}"></td>
+    <td th:text="${board.boardHits}"></td>
+  </tr>
+</table>
+<button onclick="homeReq()">Home</button>
+</body>
+<script>
+  const homeReq = () => {
+    location.href = "/";
+  }
+</script>
+</html>

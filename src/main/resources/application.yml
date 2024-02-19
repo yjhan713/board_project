@@ -1,0 +1,24 @@
+# 서버 포트 설정
+server:
+  port: 8082
+
+# database 연동 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 각자 pc에 만들어 놓은 DB 이름을 써야 합니다. /db_codingrecope 이부분
+    url: jdbc:mysql://localhost:3306/db_springboot?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+
+    # mysql에 생성한 사용자 계정 정보를 써야함
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+
+  # spring data jpa 설정
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update      # create 초기 생성, update 입력 데이터 저장
