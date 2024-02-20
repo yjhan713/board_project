@@ -46,11 +46,14 @@
 <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}">next</a>
 <!-- 마지막 페이지로 이동 -->
 <a th:href="@{/board/paging(page=${boardList.totalPages})}">Last</a>
-
+<button onclick="homeReq()">Home</button>
 </body>
 <script>
   const saveReq = () => {
       location.href = "/board/save";
+  }
+   const homeReq = () => {
+    location.href = "/";
   }
 
 </script>
