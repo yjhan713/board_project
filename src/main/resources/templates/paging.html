@@ -6,6 +6,7 @@
 </head>
 <body>
 <button onclick="saveReq()">글작성</button>
+<button onclick="saveReq()">홈</button>
 
 <table>
   <tr>
@@ -51,6 +52,10 @@
 <script>
   const saveReq = () => {
       location.href = "/board/save";
+  }
+
+  const homeReq = () => {
+    location.href = "/";
   }
 </script>
 </html>
