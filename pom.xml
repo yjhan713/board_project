@@ -12,7 +12,7 @@
 	<artifactId>spring_boot_test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>spring_boot_test</name>
+	<name>app_test</name>
 	<description>Java Project</description>
 	<properties>
 		<java.version>11</java.version>
